@@ -14,7 +14,7 @@ const lapsList = document.getElementById("laps");
 startPauseBtn.addEventListener("click", () => {
   if (!isRunning) {
     startTime = Date.now() - elapsedTime;
-    timerInterval = setInterval(updateDisplay, 10); // update every 10ms
+    timerInterval = setInterval(updateDisplay, 10); 
     startPauseBtn.textContent = "Pause";
     isRunning = true;
   } else {
@@ -60,7 +60,7 @@ function updateDisplay() {
   let hours = Math.floor(elapsedTime / 3600000);
   let minutes = Math.floor((elapsedTime % 3600000) / 60000);
   let seconds = Math.floor((elapsedTime % 60000) / 1000);
-  let milliseconds = Math.floor((elapsedTime % 1000) / 10); // hundredths
+  let milliseconds = Math.floor((elapsedTime % 1000) / 10); 
 
   display.textContent = `${pad(hours)}:${pad(minutes)}:${pad(seconds)}.${pad(milliseconds)}`;
 }
@@ -68,3 +68,4 @@ function updateDisplay() {
 function pad(number) {
   return number < 10 ? "0" + number : number;
 }
+
